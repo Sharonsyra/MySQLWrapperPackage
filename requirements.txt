@@ -1,0 +1,5 @@
+coverage==4.5.3
+injector==0.16.1
+nose2==0.9.1
+PyMySQL==0.9.3
+six==1.12.0
