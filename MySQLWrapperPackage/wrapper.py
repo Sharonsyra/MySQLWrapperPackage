@@ -38,35 +38,27 @@ class MySQLWrapper(MySQLWrapperAbstract):
             cursor.execute(self.table_object.sanitize_insert_full(table, columns, values))
         self.connection.commit()
 
-    def fetch_all(self, table):
+    def fetch_all(self, table, limit=None):
         """ Fetch all records """
 
         all_records = {}
         with self.connection:
             cursor = self.connection.cursor()
-            cursor.execute(self.table_object.sanitize_fetch_all(table))
+            cursor.execute(self.table_object.sanitize_fetch_all(table, limit))
             all_records = cursor.fetchall()
         self.connection.commit()
         return all_records
 
-    def fetch_limit(self, table, value):
-        """ fetch specific records """
-
-        lim = {}
-        with self.connection:
-            cursor = self.connection.cursor()
-            cursor.execute(self.table_object.sanitize_fetch_limit(table, value))
-            lim = cursor.fetchone()
-        self.connection.commit()
-        return lim
-
     def update_table(self, table, column, new_value, conditional_column, conditional_value):
         """ Update table """
 
+        all_records = {}
         with self.connection:
             cursor = self.connection.cursor()
             cursor.execute(self.table_object.santize_update(table, column, new_value, conditional_column, conditional_value))
+            all_records = cursor.fetchall()
         self.connection.commit()
+        return all_records
 
     def delete_table(self, table):
         """ Delete table """

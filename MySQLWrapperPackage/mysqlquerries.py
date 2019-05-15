@@ -24,20 +24,15 @@ class MySQLQueryStatements(object):
 
         return sql.strip()
     
-    def sanitize_fetch_all(self, table):
+    def sanitize_fetch_all(self, table, limit=None):
         """ Query to fetch all records """
-
-        sql = ''' SELECT * FROM {table};'''.format(table=table)
-        return sql.strip()
-
-    def sanitize_fetch_limit(self, table, value):
-        """ Query to fetch specific records """
-
-        sql = ''' 
+        if limit: 
+            sql = ''' 
             SELECT * FROM {table}
             LIMIT {value}
-            '''.format(table=table, value=value)
-
+            '''.format(table=table, value=limit)
+            return sql.strip() 
+        sql = ''' SELECT * FROM {table};'''.format(table=table)
         return sql.strip()
 
     # def sanitize_fetch_columns(self, table, columns):
