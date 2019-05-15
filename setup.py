@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name='mysqlwrapperpackage',
-      version='0.2',
+      version='v1.2',
       description='MySQL Python Wrapper Package',
       long_description=long_description,
       url='https://github.com/Sharonsyra/MySQLWrapperPackage',
