@@ -1,4 +1,4 @@
-from wrapper import MySQLWrapper
+from MySQLWrapperPackage.wrapper import MySQLWrapper
 from collections import namedtuple
 
 Table = namedtuple('Table', 'table_name datatype')
@@ -11,4 +11,4 @@ wrapper.insert_values('user', ['age','name'], ['90', '67'])
 wrapper.fetch_all('user')
 wrapper.fetch_limit('user', 1)
 wrapper.update_table('user', 'age', '48', 'age', '45')
-wrapper.delete_table('fir1')
+wrapper.delete_table('user1')

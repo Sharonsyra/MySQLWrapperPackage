@@ -1,9 +1,9 @@
 import pymysql
 from injector import inject, Injector
 
-from wrapperabstraction import MySQLWrapperAbstract
-from mysqlquerries import MySQLQueryStatements
-from connections import MysqlConnection, get_configurations
+from .wrapperabstraction import MySQLWrapperAbstract
+from .mysqlquerries import MySQLQueryStatements
+from .connections import MysqlConnection, get_configurations
 
 
 class MySQLWrapper(MySQLWrapperAbstract):

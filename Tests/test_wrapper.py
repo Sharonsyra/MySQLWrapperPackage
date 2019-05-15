@@ -1,7 +1,7 @@
 import unittest
 from collections import namedtuple
 
-from wrapper import MySQLWrapper
+from MySQLWrapperPackage.wrapper import MySQLWrapper
 
 class TestWrapper(unittest.TestCase):
 
