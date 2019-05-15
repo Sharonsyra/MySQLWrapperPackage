@@ -60,10 +60,6 @@ class MySQLWrapper(MySQLWrapperAbstract):
         self.connection.commit()
         return lim
 
-    def fetch_columns(self, table, columns):
-        # To be implemented
-        pass
-
     def update_table(self, table, column, new_value, conditional_column, conditional_value):
         """ Update table """
 
@@ -71,10 +67,6 @@ class MySQLWrapper(MySQLWrapperAbstract):
             cursor = self.connection.cursor()
             cursor.execute(self.table_object.santize_update(table, column, new_value, conditional_column, conditional_value))
         self.connection.commit()
-
-    def delete_records(self, table, conditional_column, conditional_value):
-        # To be implemented
-        pass
 
     def delete_table(self, table):
         """ Delete table """
