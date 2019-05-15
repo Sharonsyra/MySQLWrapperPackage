@@ -13,7 +13,7 @@ The code is written in Python3
 Install the package 
 
 ```
-pip install mysqlwrapperpackage
+pip install mysqlwrapperpackage1
 ```
 
 ### Installing locally from github
