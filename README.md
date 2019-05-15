@@ -8,7 +8,15 @@ These instructions should help you run the code on your machine.
 ### Prerequisites
 The code is written in Python3
 
-### Installing
+### Installing the package 
+
+Install the package 
+
+```
+pip install mysqlwrapperpackage
+```
+
+### Installing locally from github
 
 start by cloning the repository from GitHub:
 
@@ -22,21 +30,40 @@ for ssh use
 git clone git@github.com:Sharonsyra/MySQLWrapperPackage.git
 ```
 
-Change Directory into the project folder
-```
-$ cd bc-16-Campolutions-idea-box
-```
-
 Install the application's dependencies from `requirements.txt`
 ```
 $ pip install -r requirements.txt
 ```
 
-### Running the program
+Start your MySQL server
 
-See the example as on examples.py file
+```
+mysqld
+```
 
-Run your tests:
+### Running the project
+
+In you Working folder Test with this commands 
+
+- Import WrapperPackage 
+
+```
+from MySQLWrapperPackage.wrapper import MySQLWrapper
+```
+
+- Make an instance of the start method. This creates an instance of the connection
+
+```
+variable_name = MySQLWrapper.start()
+```
+
+- View all from table
+
+```
+variable_name.fetch_all('table')
+```
+
+### Run your tests:
 ```
 $ nose2 
 ```
